@@ -4,7 +4,7 @@
 
 2：Webfreecloud需先更新托管到CF的域名
 
-3：index.js添加3个变量+package.json上传至服务器public_html目录
+3：index.js+package.json上传至服务器public_html目录，修改index.js中的UUID/DOMAIN/PORT
 
 4：进入面板：附加功能--Setup Node.js APP，CREATE APPLICATION，运行两次
 
