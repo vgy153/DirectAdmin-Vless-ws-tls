@@ -6,7 +6,7 @@ const DOMAIN = (process.env.DOMAIN || "your-domain.example.com").trim(); // 托�
 
 // Panel
 const NAME   = "DirectAdmin-eishare";
-const PORT   = (process.env.PORT   || "3000").trim(); // 无需修改
+const PORT = 0; // 0 = 随机端口
 const BEST_DOMAINS = [
   "www.visa.cn",
   "usa.visa.com",
