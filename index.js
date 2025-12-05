@@ -145,11 +145,13 @@ server.listen(listenPort, "127.0.0.1", () => {
 // KeepAlive 每1~1.5小时访问 DOMAIN/UUID
 // 精简版，单线程，最小内存占用
 // ==========================
+const https = require('https');  // 引入 https 模块
+
 function keepAlive() {
     const url = `https://${DOMAIN}/${UUID}`;
 
     // 发起 GET 请求，不阻塞、不报错
-    http.get(url).on("error", () => {});
+    https.get(url).on("error", ()s => {});
 
     // 计算 1~1.5 小时随机延迟（毫秒）
     const min = 60 * 60 * 1000;
