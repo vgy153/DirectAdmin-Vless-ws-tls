@@ -1,5 +1,5 @@
 {
-  "name": "vless-ws-tls-8links",
+  "name": "vless-ws-tls",
   "version": "1.0.0",
   "description": "纯净 VLESS-WS-TLS + 优选域名节点",
   "main": "index.js",
