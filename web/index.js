@@ -17,16 +17,19 @@ const server = http.createServer((q,r)=>{
 });
 
 new ws.Server({server}).on("connection",s=>{
-  if(c++>19){s.close(1008);return}
+  if(c++>14){s.close(1008);return}
   s.on("close",()=>{c--;r?.destroy()});
   let r;
   s.once("message",m=>{
     try{
+      if(m.length<34)return s.close();  // 最小握手包长度检查
       for(let i=0;i<16;i++)if(m[1+i]!==parseInt(hex.substr(i*2,2),16))return s.close();
       let p=17;
       const port=m.readUInt16BE(p);p+=2;
-      if(m[p++]!==1)return s.close();
-      const ip=[m[p++],m[p++],m[p++],m[p++]].join(".");
+      if(m[p++]!==1||m.length<p+4)return s.close();
+      const b1=m[p++],b2=m[p++],b3=m[p++],b4=m[p++];  // 临时变量防错位
+      const ip=`${b1}.${b2}.${b3}.${b4}`;
+      console.log(`VLESS handshake OK: ${ip}:${port}`);  // 调试日志
       s.send(new Uint8Array([m[0],0]));
       r=net.connect(port,ip,()=>{r.write(m.slice(p))});
       s.on("message",d=>r.write(d));
