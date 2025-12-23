@@ -19,15 +19,17 @@
 * 3：进入面板--附加功能--Setup Node.js APP
    
      *输入：
-          路径：public_html
-          文件：index.js
+
+  路径：public_html
+
+  文件：index.js
 
      *然后：
 
-  1.CREATE APPLICATION
+  CREATE APPLICATION
 
-  2.run npm install
+  run npm install
 
-  3.运行js--点击start--运行
+ 运行js--点击start--运行
   
 * 4：浏览器访问 域名/UUID，可见节点链接地址
