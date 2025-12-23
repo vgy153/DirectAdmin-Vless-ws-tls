@@ -7,12 +7,7 @@ const DOMAIN = (process.env.DOMAIN || "abc.domain.dpdns.org").trim();           
 
 // Panel 配置
 const NAME = "DirectAdmin-easyshare";
-const LISTEN_PORT = 0;          // 随机端口
-const LISTEN_ADDR = "0.0.0.0";  
-server.listen(LISTEN_PORT, LISTEN_ADDR, () => {
-    console.log(`Node listening on ${LISTEN_ADDR}:${server.address().port}`);
-});
-
+const PORT = 0; // 随机端口
 const BEST_DOMAINS = [
     "www.visa.cn",
     "www.shopify.com",
